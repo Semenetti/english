@@ -59,7 +59,8 @@ export default class Card {
     textBlock.append(title);
 
     const span = document.createElement('span');
-    span.innerHTML = '&#x2B6E;';
+    span.style = 'background-image: url(../src/img/repeat.svg)';
+    // span.innerHTML = '&#x2B6E;';
     // template += '<span id=\'rotate-btn\'>&#x2B6E;</span>';
     // template += '</div>';
     // template += '</div>';

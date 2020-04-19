@@ -289,7 +289,9 @@ const changeBtnStyle = (e) => {
   const startGameBtn = document.getElementById('start-game');
   e.target.classList.remove('start');
   e.target.classList.add('repeat');
-  e.target.innerHTML = '&#x2B6E;';
+  // e.target.innerHTML = '&#x2B6E;';
+  e.target.innerHTML = '';
+  e.target.style = 'background-image: url(../src/img/repeat.svg)';
 
   setTimeout(() => {
     startGameBtn.addEventListener('click', () => {
