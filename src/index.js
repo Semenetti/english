@@ -219,6 +219,29 @@ const goToMainPage = () => {
   }, 4000);
 };
 
+
+const renderMistakesBlock = () => {
+  const starsWrapper = getStarsWrapper();
+  const arrayWithAnswers = get('answersHistoryArray');
+
+  const arrayWithWrongAnswers = arrayWithAnswers.filter((word) => word === WRONG);
+  const arrWithWrongAnswers = [];
+
+  for (let i = 0; i < arrayWithWrongAnswers.length; i += 1) {
+    const position = i;
+
+    const image = 'img/star.svg';
+    const currentStar = new Star(image, position);
+    arrWithWrongAnswers.push(currentStar);
+  }
+
+  arrWithWrongAnswers.forEach((el) => {
+    const elem = el;
+    starsWrapper.append(elem.generateStar());
+  });
+};
+
+
 const endCurrentGame = () => {
   const cardWrapper = getWrapper();
 
@@ -235,6 +258,7 @@ const endCurrentGame = () => {
   }
   const currentCard = new EndRound(currentRound).generateRoundResult();
   cardWrapper.append(currentCard);
+  renderMistakesBlock();
   setTimeout(() => {
     playCurrentWord(`../src/${currentRound.audioSrc}`);
   }, 700);
