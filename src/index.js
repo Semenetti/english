@@ -46,6 +46,7 @@ if (getCurrentGameMode() === PLAY) {
 
 const playCurrentWord = (src) => {
   const audio = new Audio(src);
+  audio.preload = "auto";
   return audio.play();
 };
 
