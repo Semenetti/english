@@ -18,22 +18,22 @@ const WRONG = 'WRONG';
 const openMenuBtn = document.getElementById('openMenu');
 const closeMenuBtn = document.getElementById('closeMenu');
 
-openMenuBtn.onclick = () => {
+openMenuBtn.addEventListener('click', () => {
   document.querySelector('#navbar').style.width = '100%';
   document.querySelectorAll('.open')[0].style.opacity = 0;
-};
+});
 
-closeMenuBtn.onclick = () => {
+closeMenuBtn.addEventListener('click', () => {
   document.querySelector('#navbar').style.width = '0';
   document.querySelectorAll('.open')[0].style.opacity = 1;
-};
+});
 
 const openedMenuContent = document.getElementById('navbar');
-openedMenuContent.onclick = () => {
+
+openedMenuContent.addEventListener('click', () => {
   document.querySelector('#navbar').style.width = '0';
   document.querySelectorAll('.open')[0].style.opacity = 1;
-};
-
+});
 
 const getCurrentGameMode = () => ((gameMode.checked) ? PLAY : TRAIN);
 
@@ -46,7 +46,7 @@ if (getCurrentGameMode() === PLAY) {
 
 const playCurrentWord = (src) => {
   const audio = new Audio(src);
-  audio.preload = "auto";
+  audio.preload = 'auto';
   return audio.play();
 };
 
