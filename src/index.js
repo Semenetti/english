@@ -1,4 +1,4 @@
-// import './js/navigation';
+import '@babel/polyfill';
 import create from './js/create';
 import Card from './js/Card';
 import cards from './js/cards';
